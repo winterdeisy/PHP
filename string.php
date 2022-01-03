@@ -11,6 +11,9 @@ echo 'hello \"w\"orld';
 echo "hello "."world"; //좌항과 우항을 결합한다.
 ?>
 
-
+<h2>String length function</h2>
+<?php
+echo strlen("hello world");
+?>
 </body>
 </html>
