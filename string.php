@@ -13,7 +13,7 @@ echo "hello "."world"; //좌항과 우항을 결합한다.
 
 <h2>String length function</h2>
 <?php
-echo strlen("hello world");
+echo strlen("hello world"); //문자열의 길이를 출력한다
 ?>
 </body>
 </html>
