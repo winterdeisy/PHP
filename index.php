@@ -7,19 +7,41 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>WEB</h1>
+    <h1><a href="index.php">WEB</a></h1>
+    <?php
+    // data 디렉토리에 있는 파일의 목록을 가져오고
+    // 그 파일의 목록 하나하나를 li와 a 태그로 글목록 만들기
     <ol>
-        <li><a href="index.php?id=HTML">HTML</a></li>
-        <li><a href="index.php?id=CSS">CSS</a></li>
-        <li><a href="index.php?id=JavaScript">JavaScript</a></li>
+    $list = scandir('data');
+    $i = 0;
+    while($i<count($list)) {
+        if($list[$i]!= '.') {
+            if($list[$i] != '..') {
+                ?>
+                <li><a href="index.php?id=<?=$list[$i]?>"><?=$list[$i]?></a></li>
+                <?php
+            }
+        }
+        $i = $i + 1;
+    }
+    ?>
     </ol>
+    ?>
     <h2>
         <?php
-        echo $_GET['id'];
+        if(isset($_GET['id'])) {
+            echo $_GET['id'];
+        } else {
+            echo "welcome";
+        }
         ?>
     </h2>
     <?php 
-    echo file_get_contents("data/".$_GET['id']);
+    if(isset($_GET['id'])) {
+        echo file_get_contents("data/".$_GET['id']);
+    } else {
+        echo "hello, php";
+    }
     ?>
 </body>
 </html>
