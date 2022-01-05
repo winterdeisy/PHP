@@ -38,7 +38,7 @@
     </h2>
     <?php 
     if(isset($_GET['id'])) {
-        echo file_get_contents("data/".$_GET['id']);
+        echo file_get_conGtents("data/".$_GET['id']);
     } else {
         echo "hello, php";
     }
