@@ -15,9 +15,21 @@
     
     $list = scandir('./data');
     $i=0;
-    while($i < 6) {
-        echo "<li>$list[$i]</li>\n";
+    while($i < count($list)) {
+        if($list[$i] != '.') {
+            if($list[$i] != '..') {
+        echo "<li><a href=\"index.php?id=$list[$i]\">$list[$i]</a></li>\n";
+        }
+    }
         $i = $i + 1;
+    }
+    ?>
+
+    <?php
+    if(isset($_GET['id'])) {
+        echo $_GET['id'];
+    } else {
+        echo "welcome";
     }
     ?>
 
