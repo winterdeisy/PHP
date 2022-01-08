@@ -32,6 +32,13 @@
         echo "welcome";
     }
     ?>
+    <?php
+    if(inset($_GET['id'])) {
+        echo file_get_contents("data/".$_GET['id']);
+    } else {
+        echo "hello, php";
+    }
+    ?>
 
 </body>
 </html>
