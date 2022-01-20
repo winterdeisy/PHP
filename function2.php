@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Function</h1>
+    <!-- function (name) (parameter) -->
     <h2>Basic</h2>
 
     <?php
@@ -16,6 +17,7 @@
         print("lorem ipsum dolor<br>");
 
     }    
+    basic();
     basic();
     basic();
     basic();
