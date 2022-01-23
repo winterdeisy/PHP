@@ -8,11 +8,20 @@
 </head>
 <body>
     <h1><a href="index.php">WEB</a></h1>
+
+    <!-- 자동화하기
     <ol>
         <li><a href="index.php?id=HTML">HTML</a></li>
         <li><a href="index.php?id=CSS">CSS</a></li>
         <li><a href="index.php?id=JavaScript">JavaScript</a></li>
-    </ol>
+        <li><a href="index.php?id=PHP">PHP</a></li>
+    </ol> -->
+
+    <?php
+    // data 디렉토리에 있는 파일의 목록을 가져와서 그 파일의 목록 하나하나를 li와 a태그로 만들기
+    
+    ?>
+
     <h2>
         <?php
         if(isset($_GET['id'])) {
