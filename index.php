@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>WEB</h1>
+    <h1><a href="index.php">WEB</a></h1>
     <ol>
         <li><a href="index.php?id=HTML">HTML</a></li>
         <li><a href="index.php?id=CSS">CSS</a></li>
@@ -15,13 +15,21 @@
     </ol>
     <h2>
         <?php
+        if(isset($_GET['id'])) {
+        //만약에 id값이 있다면
         echo $_GET['id'];
+        } else {
+        //만약에 id값이 없다면
+        echo "welcome";
+        }
         ?>
     </h2>
-
     <?php
+    if(isset($_GET['id'])) {
     echo file_get_contents("data/".$_GET['id']);
+    } else {
+        echo "hello, php";
+    }
     ?>
-
 </body>
 </html>
