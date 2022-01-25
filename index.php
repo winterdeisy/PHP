@@ -8,19 +8,22 @@
 </head>
 <body>
     <h1><a href="index.php">WEB</a></h1>
+    <ol>  
+        <?php
+        //scandir은 특정한 디렉토리에 소속된 파일을 배열로 반환한다.
+        $list = scandir('./data');
+        var_dump($list);
 
-    <!-- 자동화하기
-    <ol>
-        <li><a href="index.php?id=HTML">HTML</a></li>
-        <li><a href="index.php?id=CSS">CSS</a></li>
-        <li><a href="index.php?id=JavaScript">JavaScript</a></li>
-        <li><a href="index.php?id=PHP">PHP</a></li>
-    </ol> -->
+        //원소를 하나씩 꺼내오기
+        echo "<li>$list[0]</li>\n";
+        echo "<li>$list[1]</li>\n";
+        echo "<li>$list[2]</li>\n";
+        echo "<li>$list[3]</li>\n";
+        echo "<li>$list[4]</li>\n";
+        echo "<li>$list[5]</li>\n";
 
-    <?php
-    // data 디렉토리에 있는 파일의 목록을 가져와서 그 파일의 목록 하나하나를 li와 a태그로 만들기
-    
-    ?>
+        ?>
+    </ol>
 
     <h2>
         <?php
