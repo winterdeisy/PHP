@@ -27,8 +27,23 @@
         print($left+$right);
         print("<br>");
     }
-    sum(2,4);
+    sum(2,4); //입력값에 따라 다르게 동작한다
     sum(4,6);
+    ?>
+
+    <h2>return</h2>
+    <?php
+    //sum()함수에는 출력하는 기능이 내장되어있지 않음
+    //출력하는 함수도 함께 내장되어 있는 함수 sum2()
+    function sum2($left, $right) {
+        //return을 만나는 순간 함수는 종료된다.
+        return $left+$right;
+        //리턴 이후는 출력되지 않음
+        echo 1234;
+    }
+    print(sum2(2,5));
+    file_put_contents('result.txt', sum2(2,5));
+
     ?>
     
 </body>
