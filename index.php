@@ -1,10 +1,60 @@
+<?php
+    function print_title() {
+        
+        if(isset($_GET['id'])) {
+        //만약에 id값이 있다면
+        echo $_GET['id'];
+        } else {
+        //만약에 id값이 없다면
+        echo "welcome";
+        }
+        
+    }
+?>
+
+<?php
+function print_description() {
+    <?php
+    if(isset($_GET['id'])) {
+    echo file_get_contents("data/".$_GET['id']);
+    } else {
+        echo "hello, php";
+    }
+    ?>
+}
+?>
+
+<?php
+    function print_list() {
+        
+        $list = scandir('./data');
+        $i = 0;
+        while($i < count($list)) {
+            if($list[$i] != '.') {
+                //리스트의 .을 제거
+                if($list[$i] != '..') {
+                    //리스트의 ..을 제거
+            echo "<li><a
+            href=\"index.php?id=$list[$i]\">$list[$i]</a></li>\n";
+                }
+            }
+            $i = $i + 1;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>
+        <?php
+        print_title()
+        ?>
+
+    </title>
 </head>
 <body>
     <h1><a href="index.php">WEB</a></h1>
@@ -36,42 +86,17 @@
         */
 
         //항목이 자동으로 추가되도록 반복문 사용하기
-        $list = scandir('./data');
-        $i = 0;
-        while($i < count($list)) {
-            if($list[$i] != '.') {
-                //리스트의 .을 제거
-                if($list[$i] != '..') {
-                    //리스트의 ..을 제거
-            echo "<li><a
-            href=\"index.php?id=$list[$i]\">$list[$i]</a></li>\n";
-                }
-            }
-            $i = $i + 1;
-        }
-
-
-
+        print_list();
         ?>
     </ol>
 
     <h2>
-        <?php
-        if(isset($_GET['id'])) {
-        //만약에 id값이 있다면
-        echo $_GET['id'];
-        } else {
-        //만약에 id값이 없다면
-        echo "welcome";
-        }
+    <?php
+        print_title()
         ?>
     </h2>
     <?php
-    if(isset($_GET['id'])) {
-    echo file_get_contents("data/".$_GET['id']);
-    } else {
-        echo "hello, php";
-    }
+    print_description()
     ?>
 </body>
 </html>
